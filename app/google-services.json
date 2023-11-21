@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "935073253254",
+    "firebase_url": "https://trabalhoidiomas-847d9-default-rtdb.firebaseio.com",
+    "project_id": "trabalhoidiomas-847d9",
+    "storage_bucket": "trabalhoidiomas-847d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935073253254:android:6a040f3adb421b55d90e07",
+        "android_client_info": {
+          "package_name": "br.com.trabalhoidiomas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935073253254-49lkekuff9qqjo0r28eabf8uucub3e5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.trabalhoidiomas",
+            "certificate_hash": "21ae20cc0d491d1ad679c1aa48c950e4d7da33fd"
+          }
+        },
+        {
+          "client_id": "935073253254-44uesreu2crc1mars8fg152f76j1t0r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHOYRoETLqSD0QvOmtlQchADkv3vSZUH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935073253254-44uesreu2crc1mars8fg152f76j1t0r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
