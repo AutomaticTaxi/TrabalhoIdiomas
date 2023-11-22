@@ -27,12 +27,16 @@ import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import br.com.trabalhoidiomas.FireBase.FireBaseDB;
 
 public class Tela_Login extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
     private SignInButton signInButton;
     private FirebaseAuth mAuth;
+    private FireBaseDB fireBaseDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +44,9 @@ public class Tela_Login extends AppCompatActivity {
         setContentView(R.layout.tela_login);
         signInButton = findViewById(R.id.Id_Bt_Google_Login);
         mAuth = FirebaseAuth.getInstance();
-        googleSignInClient gso = new GoogleSignInOptions.Builder(
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("")
+                .requestIdToken("935073253254-44uesreu2crc1mars8fg152f76j1t0r3.apps.googleusercontent.com")
                 .requestEmail().build();
         googleSignInClient = GoogleSignIn.getClient(this,gso);
 
@@ -71,6 +75,12 @@ public class Tela_Login extends AppCompatActivity {
                     try {
                         GoogleSignInAccount conta = task.getResult(ApiException.class);
                         Login_Google(conta.getIdToken());
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        // Aqui você pode acessar o UID do usuário usando user.getUid()
+                        String uid = user.getUid();
+                        fireBaseDB = new FireBaseDB();
+                        fireBaseDB.FireBaseSalvarUser(uid);
+
                     }catch (ApiException apiException){
                         Toast.makeText(getApplicationContext(), "Nenhum Usuário Google logado .",
                                 Toast.LENGTH_LONG).show();
