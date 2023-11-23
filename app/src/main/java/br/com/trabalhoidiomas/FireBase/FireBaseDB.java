@@ -1,13 +1,15 @@
 package br.com.trabalhoidiomas.FireBase;
 
 
-
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.HashMap;
 import java.util.List;
@@ -158,6 +161,28 @@ public class FireBaseDB {
             }
         });
         return lista;
+    }
+    public void recuperarimagens(){
+
+
+// ...
+// Substitua "path/to/your/image.jpg" pelo caminho real da sua imagem no Storage
+        String imagePath = "gs://trabalhoidiomas-847d9.appspot.com/imagens/Captura de tela 2023-11-22 220328.png";
+        StorageReference imageRef = storageReference.child(imagePath);
+
+// Obtenha a URL da imagem
+        imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+            // Use a URL para carregar a imagem usando uma biblioteca de carregamento de imagem, como o Glide
+            Glide.with(this)
+                    .load(uri)
+                    .apply(new RequestOptions().placeholder(R.drawable.placeholder)) // Adicione um placeholder, se necessário
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(imageView); // Substitua "imageView" pelo seu ImageView
+        }).addOnFailureListener(exception -> {
+            // Lidar com falhas ao obter a URL
+            // Exemplo: Log.d("Firebase", "Erro ao obter URL: " + exception.getMessage());
+        });
+
     }
 
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tela_Login">
+    tools:context=".ui.Tela_Login">
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/Id_Bt_Google_Login"

@@ -1,16 +1,13 @@
-package br.com.trabalhoidiomas;
+package br.com.trabalhoidiomas.ui;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +20,6 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import br.com.trabalhoidiomas.FireBase.FireBaseDB;
+import br.com.trabalhoidiomas.R;
 
 public class Tela_Login extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
@@ -104,7 +101,7 @@ public class Tela_Login extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(Tela_Login.this, "Usuario Logado com sucesso",
                             Toast.LENGTH_SHORT).show();
-                    Intent intent =new Intent(Tela_Login.this,Menu.class);
+                    Intent intent =new Intent(Tela_Login.this, Menu.class);
                     startActivity(intent);
 
                 }else {

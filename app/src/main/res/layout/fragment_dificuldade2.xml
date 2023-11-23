@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_layout_dificuldade"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.gallery.dificuldade">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="87dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="19dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toEndOf="@+id/id_button_dificult_medio"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:srcCompat="@drawable/icon_medio" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="87dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="34dp"
+        android:importantForAccessibility="no"
+        app:layout_constraintStart_toEndOf="@+id/id_button_dificult_hard"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/icon_dificil" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="97dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        android:contentDescription="TODO"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/id_button_dificult_facil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_hellokity"/>
+
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="145dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_dificult_hard" />
+
+
+    <Button
+        android:id="@+id/id_button_dificult_medio"
+        android:layout_width="285dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:text="@string/m_dio"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_dificult_facil"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/id_button_dificult_hard"
+        android:layout_width="285dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:text="@string/dif_cil"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_button_dificult_medio"
+        tools:ignore="TextSizeCheck" />
+
+    <Button
+        android:id="@+id/id_button_dificult_facil"
+        android:layout_width="281dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Fácil"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,TextSizeCheck" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
